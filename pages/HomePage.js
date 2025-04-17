@@ -3,8 +3,8 @@ const { expect } = require('@playwright/test');
 class HomePage {
     constructor(page){
         this.page = page;
-        this.openMenu = page.locator('#react-burger-menu-btn');
-        this.logoutLink = page.locator('#logout_sidebar_link');
+        this.openMenu = page.locator('#react-burger-menu-btn');        
+        this.logoutLink = page.getByRole('link',{name:'Logout'});
         this.sauceLabsBackpack = page.locator("//div[contains(text(),'Sauce Labs Backpack')]");
         this.inventoryItemName = page.locator('[data-test="inventory-item-name"]');
         this.addToKartButton = page.locator('[data-test="add-to-cart"]');
