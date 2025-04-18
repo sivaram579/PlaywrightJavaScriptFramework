@@ -20,7 +20,7 @@ class HomePage {
 
     async validateBackpackItem()
     {
-        //await this.sauceLabsBackpack.toContainText('Sauce Labs Backpack');
+        await expect(this.sauceLabsBackpack).toContainText('Sauce Labs Backpack');
         await this.sauceLabsBackpack.click();
     }
 
@@ -34,7 +34,7 @@ class HomePage {
     async openKartAndCheckout()
     {
         await this.shoppingKartButton.click();
-        //await expect(sauceLabsBackpack).toBeVisible();
+        await expect(this.sauceLabsBackpack).toBeVisible();
         await this.checkoutButton.click();
         await this.firstName.fill('Siva');
         await this.lastName.fill('Ram');
