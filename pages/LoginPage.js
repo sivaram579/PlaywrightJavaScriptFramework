@@ -1,4 +1,7 @@
 const { expect } = require('@playwright/test');
+const appURL = 'https://www.saucedemo.com/';
+const appUsername = 'standard_user';
+const appPassword = 'secret_sauce';
 
 class LoginPage {
     constructor(page) {
@@ -11,12 +14,12 @@ class LoginPage {
     }
 
     async navigate() {
-        await this.page.goto('https://www.saucedemo.com/');
+        await this.page.goto(appURL);
     }
 
-    async login(username, password) {
-        await this.usernameField.fill(username);
-        await this.passwordField.fill(password);
+    async login() {
+        await this.usernameField.fill(appUsername);
+        await this.passwordField.fill(appPassword);
         await this.loginButton.click();
     }
 
